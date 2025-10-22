@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw
 import numpy as np
 import matplotlib
 
-matplotlib.use('Agg')  # Отключает GUI, чтоб не было ошибок с потоками
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 UPLOAD_FOLDER = 'static'
@@ -19,9 +19,9 @@ def create_color_histogram(image, filename):
     plt.hist(arr[..., 1].ravel(), bins=256, color='green', alpha=0.5, label='Green')
     plt.hist(arr[..., 2].ravel(), bins=256, color='blue', alpha=0.5, label='Blue')
     plt.legend()
-    plt.title('Гистограмма распределения цветов')
-    plt.xlabel('Интенсивность')
-    plt.ylabel('Количество пикселей')
+    plt.title('Color Distribution Histogram')
+    plt.xlabel('Intensity')
+    plt.ylabel('Pixel Count')
     plt.tight_layout()
     plt.savefig(filename)
     plt.close()
@@ -54,7 +54,7 @@ def process():
     chess_filename = os.path.join(UPLOAD_FOLDER, 'chess.png')
     img_chess.save(chess_filename)
 
-    # Гистограмма цветов
+    # Color histogram
     hist_orig = os.path.join(UPLOAD_FOLDER, 'hist_original.png')
     create_color_histogram(img, hist_orig)
     hist_chess = os.path.join(UPLOAD_FOLDER, 'hist_chess.png')
