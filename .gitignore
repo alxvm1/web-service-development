@@ -1,0 +1,16 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+.env
+.DS_Store
+.idea/
+.vscode/
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.h5
+*.pdf
